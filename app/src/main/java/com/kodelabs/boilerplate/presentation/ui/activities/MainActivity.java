@@ -1,8 +1,11 @@
 package com.kodelabs.boilerplate.presentation.ui.activities;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.kodelabs.boilerplate.R;
@@ -17,6 +20,8 @@ public class MainActivity extends AppCompatActivity implements MainPresenter.Vie
 
     public MainPresenter mPresenter;
     public TextView mWelcomeTextView;
+    public Button mButtonPayaso;
+
 
     public ProgressDialog progress;
     @Override
@@ -24,7 +29,13 @@ public class MainActivity extends AppCompatActivity implements MainPresenter.Vie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.mWelcomeTextView = (TextView)findViewById(R.id.label_text);
-
+        this.mButtonPayaso = ( Button ) findViewById(R.id.button_payaso);
+        this.mButtonPayaso.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onClickPayaso();
+            }
+        });
 
         this.mPresenter = new MainPresenterImpl(ThreadExecutor.getInstance(),
                 MainThreadImpl.getInstance(),this);
@@ -60,4 +71,21 @@ public class MainActivity extends AppCompatActivity implements MainPresenter.Vie
     public void displayWelcomeMessage(String msg) {
         mWelcomeTextView.setText(msg);
     }
+
+    @Override
+    public void launchPayaso() {
+        Intent intent = new Intent(this,EjemploPayasoActivity.class);
+        startActivity(intent);
+    }
+
+
+    //EVENTOS BUTTON
+    public void onClickPayaso()
+    {
+        mPresenter.onClickPayaso();
+    }
+
+
+
+
 }

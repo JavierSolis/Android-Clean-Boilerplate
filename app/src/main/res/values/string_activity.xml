@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--INI ACT MAIN-->
+    <string name="act_main_button_open_payaso">Abrir el payaso</string>
+    <!--FIN ACT MAIN-->
+
+
+    <!--INI ACT PAYASO-->
+    <string name="act_payaso_moroso_hint">Moroso</string>
+    <string name="act_payaso_button_cobrar">Cobrar</string>
+
+    <!--FIN ACT MAIN-->
+
+
+</resources>

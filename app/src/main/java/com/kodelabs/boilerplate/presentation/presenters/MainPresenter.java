@@ -8,8 +8,8 @@ public interface MainPresenter extends BasePresenter {
 
     interface View extends BaseView {
         void displayWelcomeMessage(String msg);
+        void launchPayaso();
     }
 
-    // TODO: Add your presenter methods
-
+    void onClickPayaso();
 }

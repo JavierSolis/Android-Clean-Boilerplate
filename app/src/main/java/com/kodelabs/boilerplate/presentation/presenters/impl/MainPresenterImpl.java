@@ -76,4 +76,11 @@ public class MainPresenterImpl extends AbstractPresenter implements MainPresente
         mView.hideProgress();
         onError(error);
     }
+
+
+
+    @Override
+    public void onClickPayaso() {
+        mView.launchPayaso();
+    }
 }
