@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements MainPresenter.Vie
         this.mWelcomeTextView = (TextView)findViewById(R.id.label_text);
 
 
-        this.mPresenter = new MainPresenterImpl( ThreadExecutor.getInstance(),
+        this.mPresenter = new MainPresenterImpl(ThreadExecutor.getInstance(),
                 MainThreadImpl.getInstance(),this);
 
     }
